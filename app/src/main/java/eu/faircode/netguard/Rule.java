@@ -324,10 +324,7 @@ public class Rule {
                 if (pre_system.containsKey(info.packageName))
                     rule.system = pre_system.get(info.packageName);
                 if (info.applicationInfo.uid == Process.myUid())
-                    if (Util.isPlayStoreInstall(context))
-                        continue;
-                    else
-                        rule.system = true;
+                    rule.system = true;
 
                 if (all ||
                         ((rule.system ? show_system : show_user) &&
